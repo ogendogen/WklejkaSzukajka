@@ -8,6 +8,6 @@ namespace Database
 {
     public interface IDatabase
     {
-        public Task<IEnumerable<DocEntry>> GetDocsByContains(string condition);
+        public Task<IEnumerable<int>> GetDocsIdsByContains(string condition);
     }
 }

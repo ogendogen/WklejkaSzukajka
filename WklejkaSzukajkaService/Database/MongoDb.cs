@@ -12,19 +12,37 @@ namespace Database
         public MongoClient MongoClient { get; set; }
         public IMongoDatabase MongoDatabase { get; set; }
         public IMongoCollection<DocEntry> DocsCollection { get; set; }
-        
+
         public MongoDb(string connectionString)
         {
             MongoClient = new MongoClient(connectionString);
-            
+
             MongoDatabase = MongoClient.GetDatabase("wklejto");
             DocsCollection = MongoDatabase.GetCollection<DocEntry>("docs");
         }
 
-        public async Task<IEnumerable<DocEntry>> GetDocsByContains(string condition)
+        public async Task<IEnumerable<int>> GetDocsIdsByContains(string condition)
         {
-           var docsCursor = await DocsCollection.FindAsync(doc => doc.Content.Contains(condition));
-           return docsCursor.ToList();
+            List<int> ids = new List<int>();
+            
+            FindOptions<DocEntry> options = new FindOptions<DocEntry>
+            {
+                BatchSize = 5,
+                NoCursorTimeout = false
+            };
+
+            using (var cursor = await DocsCollection.FindAsync(doc => doc.Content.Contains(condition), options))
+            {
+                while (await cursor.MoveNextAsync())
+                {
+                    foreach (DocEntry doc in cursor.Current)
+                    {
+                        ids.Add(doc.PageID);
+                    }
+                }
+            }
+
+            return ids;
         }
     }
 }

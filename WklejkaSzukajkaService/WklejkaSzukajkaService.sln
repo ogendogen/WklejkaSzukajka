@@ -5,6 +5,8 @@ VisualStudioVersion = 16.0.30804.86
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WklejkaSzukajkaService", "WklejkaSzukajkaService\WklejkaSzukajkaService.csproj", "{6EF3B0A0-091C-404C-B64F-39B3D9375115}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Database", "Database\Database.csproj", "{A2608B4A-00B5-4D77-BFB4-5B9E77F92324}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{6EF3B0A0-091C-404C-B64F-39B3D9375115}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6EF3B0A0-091C-404C-B64F-39B3D9375115}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6EF3B0A0-091C-404C-B64F-39B3D9375115}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A2608B4A-00B5-4D77-BFB4-5B9E77F92324}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A2608B4A-00B5-4D77-BFB4-5B9E77F92324}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A2608B4A-00B5-4D77-BFB4-5B9E77F92324}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A2608B4A-00B5-4D77-BFB4-5B9E77F92324}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

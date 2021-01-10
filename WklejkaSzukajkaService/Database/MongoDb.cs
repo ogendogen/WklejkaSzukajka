@@ -7,7 +7,7 @@ using MongoDB.Driver;
 
 namespace Database
 {
-    public class MongoDb
+    public class MongoDb : IDatabase
     {
         public MongoClient MongoClient { get; set; }
         public IMongoDatabase MongoDatabase { get; set; }

@@ -23,10 +23,10 @@ namespace WklejkaSzukajkaService.Controllers
             _database = database;
         }
 
-        [HttpGet]
-        public async Task<IEnumerable<DocEntry>> GetByContains(string condition)
+        [HttpGet("GetDocsIdsByContains")]
+        public async Task<IEnumerable<int>> GetDocsIdsByContains(string condition)
         {
-            return await _database.GetDocsByContains(condition);
+            return await _database.GetDocsIdsByContains(condition);
         }
     }
 }
